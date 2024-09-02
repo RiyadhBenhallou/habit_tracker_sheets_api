@@ -1,8 +1,9 @@
 import gspread
 from datetime import datetime 
+import os
 
 gc = gspread.service_account(filename='./credentials.json')
-sheet_id = '1WP_UCwbad-5z-_9LXbYhf7fuklsDRiP6kYA-TCQQG30'
+sheet_id = os.environ['SHEET_ID']
 
 sh = gc.open_by_key(sheet_id)
 
